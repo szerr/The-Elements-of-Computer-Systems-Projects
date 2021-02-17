@@ -10,3 +10,24 @@
 // R0 >= 0, R1 >= 0, and R0*R1 < 32768.
 
 // Put your code here.
+
+@R2 // 初始化输出内存
+M=0
+
+(start)
+@R1
+D=M
+@outPut
+D;JEQ // if R1==0 goto outPut
+@R1
+M=D-1
+
+@R0
+D=M
+@R2
+M=D+M
+
+@start
+0;JMP
+
+(outPut)
